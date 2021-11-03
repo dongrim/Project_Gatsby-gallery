@@ -19,7 +19,19 @@
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "prettier": "2.4.1"
+    "babel-plugin-styled-components": "^1.13.2",
+    "gatsby-background-image": "^1.5.3",
+    "gatsby-plugin-image": "^1.14.1",
+    "gatsby-plugin-react-helmet": "^4.14.0",
+    "gatsby-plugin-sharp": "^3.14.1",
+    "gatsby-plugin-styled-components": "^4.14.0",
+    "gatsby-source-filesystem": "^4.0.0",
+    "gatsby-transformer-remark": "^5.0.0",
+    "gatsby-transformer-sharp": "^3.14.0",
+    "prettier": "2.4.1",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.3.1",
+    "styled-components": "^5.3.1"
   },
   "repository": {
     "type": "git",

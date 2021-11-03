@@ -67,3 +67,13 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# Assets
+static/
+src/images/
+src/markdown-pages
+
+# Misc.
+LICENSE
+package-lock.json
+yarn.lock
