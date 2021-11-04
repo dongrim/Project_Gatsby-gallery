@@ -1,7 +1,7 @@
 import React from "react"
-import { Header } from "./Header.js"
-import { Footer } from "../components/Footer.js"
-import { GlobalStyle } from "../style/global-style.js"
+import { Header } from "./Header"
+import { Footer } from "./Footer"
+import { GlobalStyle } from "../../style/global-style"
 import { Helmet } from "react-helmet"
 
 export function Layout(props) {

@@ -3,12 +3,14 @@ import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 
 const Container = styled.div`
+  border: 2px solid blue;
   padding: 130px 0;
+  height: 100vh;
 `
 const WrapperImages = styled.ul`
   color: white;
   margin: 0 auto;
-  max-width: 2000px;
+  /* max-width: 2000px; */
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 35px;
@@ -39,8 +41,6 @@ const Text = styled.div`
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: 400;
-  &:hover {
-  }
 `
 
 function Category() {

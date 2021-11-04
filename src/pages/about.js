@@ -1,6 +1,6 @@
 import React from "react"
-import { Layout } from "../components/Layout.js"
-import { Article } from "../components/Article-about.js"
+import { Layout } from "../components/index"
+import { Article } from "../components/index"
 
 function AboutPage() {
   return (

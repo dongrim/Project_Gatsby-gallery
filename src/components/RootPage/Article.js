@@ -1,14 +1,14 @@
 import React from "react"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
-import { useStaticQuery, graphql } from "gatsby"
-import Category from "./Category-about.js"
 
 const Container = styled.div`
   width: 100%;
 `
 const WrapperArticle = styled.div`
   width: 100%;
+  height: calc(100vh - 125px);
+  border: 1px solid red;
   /* padding-top: 125px; */
 `
 const Ul = styled.ul`
@@ -73,7 +73,6 @@ export const Article = () => {
           </Li>
         </Ul>
       </WrapperArticle>
-      <Category />
     </Container>
   )
 }
