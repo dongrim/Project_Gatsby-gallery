@@ -1,139 +1,124 @@
 import React from "react"
 import styled from "styled-components"
-import { StaticImage } from "gatsby-plugin-image"
+import { graphql, useStaticQuery, Link as GatsbyLink } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+// import path from "path"
 
 const Container = styled.div`
-  border: 2px solid blue;
-  padding: 130px 0;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  margin-top: 150px;
 `
-const WrapperImages = styled.ul`
-  color: white;
+const Ul = styled.ul`
+  padding: 0 17px;
   margin: 0 auto;
-  /* max-width: 2000px; */
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 35px;
+  max-width: 1225px;
+  display: flex;
+  flex-direction: column;
 `
 const Li = styled.li`
-  position: relative;
-  cursor: pointer;
-  &:hover {
-    color: gold;
-    transition: all 300ms ease-in-out;
-    veil {
-      transition: all 300ms ease-in-out;
-      position: absolute;
-      z-index: 2;
-      background: rgba(10, 10, 10, 0.5);
-      width: 100%;
-      height: 100%;
-    }
-  }
+  margin-bottom: 23px;
+  display: flex;
+  justify-content: center;
 `
-const Text = styled.div`
-  position: absolute;
-  z-index: 3;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-shadow: 0 0 4px rgb(0 0 0 / 40%);
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  font-weight: 400;
+const TextBox = styled.div`
+  width: 40%;
+  padding: 15px 0;
+  border-top: 1px solid #dfdfdf;
+  border-bottom: 1px solid #dfdfdf;
+  margin: ${({ _margin }) => (_margin % 2 ? "0 0 0 30px" : "0 30px 0 0")};
+  display: ${({ _display }) => (_display % 2 ? "none" : "block")};
+`
+const Title = styled.h1`
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: capitalize;
+`
+// const Description = styled.p`
+//   font-size: 0.9rem;
+//   margin-top: 30px;
+// `
+const Link = styled(GatsbyLink)`
+  &:hover {
+    transition: all 300ms ease-in-out;
+    filter: brightness(50%);
+  }
 `
 
 function Category() {
-  const width = 10
-  const height = 50
+  const data = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark(
+        filter: {
+          frontmatter: {
+            category_image_path_crop: {
+              absolutePath: { regex: "/categories/" }
+            }
+          }
+        }
+        sort: { fields: frontmatter___category_image_path_crop___absolutePath }
+      ) {
+        edges {
+          node {
+            id
+            fileAbsolutePath
+            html
+            frontmatter {
+              slug
+              title
+              category_image_path_crop {
+                childImageSharp {
+                  gatsbyImageData(
+                    #width: 500
+                    height: 450
+                    placeholder: BLURRED
+                    blurredOptions: { width: 100 }
+                    transformOptions: { fit: FILL, cropFocus: CENTER }
+                    aspectRatio: 1.7
+                    formats: WEBP
+                  )
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <Container>
-      <WrapperImages>
-        <Li>
-          <veil />
-          <Text>canvas</Text>
-          <StaticImage
-            src="../images/categories/c1.jpg"
-            layout="fullWidth"
-            alt="category_1"
-            placeholder="blurred"
-            width={width}
-            height={height}
-            aspectRatio={1 / 1}
-            transformOptions={{ grayscale: false, cropFocus: "attention" }}
-          />
-        </Li>
-        <Li>
-          <veil />
-          <Text>clearance sale</Text>
-          <StaticImage
-            src="../images/categories/c2.jpg"
-            layout="fullWidth"
-            alt="category_2"
-            placeholder="blurred"
-            width={width}
-            height={height}
-            aspectRatio={1 / 1}
-            transformOptions={{ grayscale: false, cropFocus: "attention" }}
-          />
-        </Li>
-        <Li>
-          <veil />
-          <Text>price etiquette</Text>
-          <StaticImage
-            src="../images/categories/c3.jpg"
-            layout="fullWidth"
-            alt="category_3"
-            placeholder="blurred"
-            width={width}
-            height={height}
-            aspectRatio={1 / 1}
-            transformOptions={{ grayscale: false, cropFocus: "attention" }}
-          />
-        </Li>
-        <Li>
-          <veil />
-          <Text>stone</Text>
-          <StaticImage
-            src="../images/categories/c4.jpg"
-            layout="fullWidth"
-            alt="category_4"
-            placeholder="blurred"
-            width={width}
-            height={height}
-            aspectRatio={1 / 1}
-            transformOptions={{ grayscale: false, cropFocus: "attention" }}
-          />
-        </Li>
-        <Li>
-          <veil />
-          <Text>still life</Text>
-          <StaticImage
-            src="../images/categories/c5.jpg"
-            layout="fullWidth"
-            alt="category_5"
-            placeholder="blurred"
-            width={width}
-            height={height}
-            aspectRatio={1 / 1}
-            transformOptions={{ grayscale: false, cropFocus: "attention" }}
-          />
-        </Li>
-        <Li>
-          <veil />
-          <Text>crypto resource</Text>
-          <StaticImage
-            src="../images/categories/c6.jpg"
-            layout="fullWidth"
-            alt="category_6"
-            placeholder="blurred"
-            width={width}
-            height={height}
-            aspectRatio={1 / 1}
-            transformOptions={{ grayscale: false, cropFocus: "attention" }}
-          />
-        </Li>
-      </WrapperImages>
+      <Ul>
+        {data.allMarkdownRemark.edges.map((edge, index) => {
+          return (
+            <Li key={edge.node.id}>
+              <TextBox _margin={index} _display={index}>
+                <Title>{edge.node.frontmatter.title}</Title>
+                {/* <Description
+                  style={{ color: "#ff2f00" }}
+                  dangerouslySetInnerHTML={{ __html: edge.node.html }}
+                /> */}
+              </TextBox>
+              {/* <Link to={path.basename(edge.node.fileAbsolutePath, ".md")}> */}
+              <Link to={edge.node.frontmatter.slug}>
+                <GatsbyImage
+                  image={getImage(
+                    edge.node.frontmatter.category_image_path_crop
+                  )}
+                  alt={edge.node.frontmatter.title}
+                />
+              </Link>
+              <TextBox _margin={index} _display={index + 1}>
+                <Title>{edge.node.frontmatter.title}</Title>
+                {/* <Description
+                  style={{ color: "#ff2f00" }}
+                  dangerouslySetInnerHTML={{ __html: edge.node.html }}
+                /> */}
+              </TextBox>
+            </Li>
+          )
+        })}
+      </Ul>
     </Container>
   )
 }

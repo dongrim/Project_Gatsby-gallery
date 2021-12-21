@@ -4,7 +4,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: "Gatsby + styled-components example123",
+    title: "Gatsby + styled-components tutorial",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -17,7 +17,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/images/categories/`,
         // path: path.join(__dirname, `src`, `images`),
       },
     },
@@ -25,14 +25,21 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/static/images`,
+        path: `${__dirname}/static/`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown-pages`,
-        path: `${__dirname}/src/markdown-pages`,
+        path: `${__dirname}/src/markdown-pages/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Exo: 300,400`, `Roboto`],
+        display: "swap",
       },
     },
   ],

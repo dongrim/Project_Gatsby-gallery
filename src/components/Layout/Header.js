@@ -1,25 +1,55 @@
-import React from "react"
+import React, { useState, useEffect, useContext } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { RiMenuFill } from "react-icons/ri"
+import modalContext from "../UserContext/UserContext"
 
 const Container = styled.div`
-  height: 125px;
+  height: 99px;
+  @media screen and (max-width: 1005px) {
+    & {
+      height: 70px;
+    }
+    .wrapperMenu {
+      display: none;
+    }
+    .wrapperHeader {
+      text-align: center;
+      height: 70px;
+    }
+    .wrapperLogo {
+      width: 100%;
+      user-select: none;
+    }
+    .logo {
+      font-size: 18px;
+    }
+    .menu {
+      margin-left: 3px;
+      cursor: pointer;
+      display: block !important;
+    }
+  }
 `
 const WrapperHeader = styled.div`
   background: white;
   position: fixed;
   width: 100%;
-  height: inherit;
+  height: 99px;
   z-index: 1000;
+  box-shadow: ${({ isShadow }) =>
+    isShadow ? "0px 1px 10px 0px rgba(0, 0, 0, 0.4)" : "none"};
   .navbar {
-    margin: 0 auto;
-    padding: 0 17px;
     height: inherit;
-    max-width: 1670px;
-    min-width: 1000px;
+    margin: auto;
+    max-width: 1225px;
+    padding: 0 17px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+  .menu {
+    display: none;
   }
 `
 const WrapperMenu = styled.div`
@@ -37,8 +67,10 @@ const LinkLogo = styled(Link)`
   font-size: 24px;
 `
 const LinkNav = styled(Link)`
-  letter-spacing: 2px;
-  margin-left: 65px;
+  letter-spacing: 1px;
+  margin-left: 45px;
+  text-transform: uppercase;
+  font-size: 1.1em;
 `
 const B = styled.b`
   font-weight: 700;
@@ -47,35 +79,53 @@ const Button = styled.button`
   background: transparent;
   cursor: pointer;
   border: none;
-  margin-left: 65px;
-  padding: 0;
-  font-size: 20px;
+  letter-spacing: 1px;
+  margin-left: 45px;
+  text-transform: uppercase;
+  font-size: 1.1em;
 `
-
 export const Header = () => {
+  const [shadow, setShadow] = useState(null)
+  const isShadow = () => {
+    if (window.scrollY === 0) setShadow(false)
+    if (window.scrollY !== 0) setShadow(!shadow)
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", isShadow)
+    return () => window.removeEventListener("scroll", isShadow)
+  }, [])
+
+  const { modal, setModal } = useContext(modalContext)
+
   return (
     <Container>
-      <WrapperHeader>
+      <WrapperHeader className="wrapperHeader" isShadow={shadow}>
         <div className="navbar">
-          <LinkLogo to="/">
-            INHO <B>CHOI</B> STUDIO
-          </LinkLogo>
-          <WrapperMenu>
+          <RiMenuFill
+            className="menu"
+            size={26}
+            onClick={() => setModal(true)}
+          />
+          <div className="wrapperLogo">
+            <LinkLogo className="logo" to="/">
+              INHO <B>CHOI</B> STUDIO
+            </LinkLogo>
+          </div>
+          <WrapperMenu className="wrapperMenu">
             <ul>
               <li>
-                <LinkNav to="/artist">Artists</LinkNav>
+                <LinkNav to="/artist">artist</LinkNav>
               </li>
               <li>
-                <LinkNav to="/exhibition">Exhibitions</LinkNav>
+                <LinkNav to="/works">works</LinkNav>
               </li>
               <li>
-                <LinkNav to="/storie">Stories</LinkNav>
+                <LinkNav to="/about">about</LinkNav>
               </li>
               <li>
-                <LinkNav to="/about">About</LinkNav>
+                <Button>search</Button>
               </li>
             </ul>
-            <Button>Search</Button>
           </WrapperMenu>
         </div>
       </WrapperHeader>

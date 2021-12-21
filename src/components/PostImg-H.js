@@ -1,7 +1,8 @@
-import React from "react"
-import { useStaticQuery, StaticQuery, graphql } from "gatsby"
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
+// import React from "react"
+// import { useStaticQuery, StaticQuery, graphql } from "gatsby"
+// import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
+// #1
 /* export const PostImg = () => (
   <StaticQuery
     query={graphql`
@@ -25,7 +26,8 @@ import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
   />
 ) */
 
-export function PostImg() {
+// #2
+/* export function PostImg() {
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark {
@@ -51,24 +53,20 @@ export function PostImg() {
       }
     }
   `)
-
-  let count = 0
   return (
     <>
       <h1>Iterator below</h1>
       {data.allMarkdownRemark.edges.map(image => {
-        count++
         return (
           <div key={image.node.id}>
             <GatsbyImage
               image={getImage(image.node.frontmatter.image_url)}
               alt={image.node.frontmatter.title}
             />
-            {count}
             <h1>{image.node.frontmatter.title}</h1>
           </div>
         )
       })}
     </>
   )
-}
+} */

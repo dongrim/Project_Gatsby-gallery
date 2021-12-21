@@ -4,6 +4,7 @@ export const GlobalStyle = createGlobalStyle`
   /* body {
     color: ${props => (props.theme === "purple" ? "purple" : "white")};
   } */
+
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -16,7 +17,7 @@ export const GlobalStyle = createGlobalStyle`
   article, aside, canvas, details, embed,
   figure, figcaption, footer, header, hgroup,
   menu, nav, output, ruby, section, summary,
-  time, mark, audio, video {
+  time, mark, audio, video, button {
   	margin: 0;
   	padding: 0;
   	border: 0;
@@ -35,10 +36,9 @@ export const GlobalStyle = createGlobalStyle`
   	display: block;
   }
   body {
-  	line-height: 1;
-    font-family: 'Exo', sans-serif;
-    /* font-family: 'Roboto', sans-serif; */
-    font-weight: 300;
+    font-family: 'Exo', 'Roboto';
+  	/* line-height: 1; */
+    /* font-weight: 400; */
   }
   ol, ul {
   	list-style: none;

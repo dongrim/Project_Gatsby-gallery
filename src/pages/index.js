@@ -1,8 +1,6 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-import { Layout } from "../components/index"
-import { Article } from "../components/index"
-import { Category } from "../components/index"
+import { Layout, Main, Category } from "../components/index"
 
 function IndexPage() {
   return (
@@ -11,7 +9,7 @@ function IndexPage() {
         <title>INHO</title>
       </Helmet>
       <Layout>
-        <Article />
+        <Main />
         <Category />
       </Layout>
     </>

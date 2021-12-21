@@ -1,22 +1,34 @@
-import React from "react"
+import React, { useState } from "react"
 import { Header } from "./Header"
 import { Footer } from "./Footer"
 import { GlobalStyle } from "../../style/global-style"
 import { Helmet } from "react-helmet"
+import { Menu } from "../index"
+import MyContext from "../UserContext/UserContext"
 
 export function Layout(props) {
+  const [modal, setModal] = useState(false)
+
   return (
     <>
       <Helmet>
-        <link
+        {/* <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Exo:wght@100;300;500&family=Roboto:wght@100;300;400;500;700&display=swap"
-        />
+        /> */}
       </Helmet>
-      <GlobalStyle theme="green" />
-      <Header />
-      {props.children}
-      <Footer />
+      <GlobalStyle />
+      <MyContext.Provider value={{ modal, setModal }}>
+        {modal ? (
+          <Menu />
+        ) : (
+          <>
+            <Header />
+            {props.children}
+            <Footer />
+          </>
+        )}
+      </MyContext.Provider>
     </>
   )
 }

@@ -1,25 +1,66 @@
 import React from "react"
 import styled from "styled-components"
-import { BsInstagram, BsFacebook, BsTwitter, BsYoutube } from "react-icons/bs"
-import { MdMail } from "react-icons/md"
+import { AiFillInstagram } from "react-icons/ai"
+import { CgFacebook } from "react-icons/cg"
+import { GiSailboat } from "react-icons/gi"
 
 const Container = styled.div`
+  /* border-top: 1px solid #d6d6d6; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: grey;
   width: 100%;
-  padding: 57px 15px 162px 15px;
-  border-top: 1px solid #d6d6d6;
-  margin-top: 130px;
+  height: 80px;
+  margin-top: 100px;
+  padding-bottom: 5px;
+  @media screen and (max-width: 1005px) {
+    .sns {
+      span {
+        display: none;
+      }
+    }
+  }
+  @media screen and (max-width: 405px) {
+    .copyRight {
+      display: none;
+    }
+    .footerNav {
+      width: 100%;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+  }
 `
-const SnsNav = styled.ul`
-  color: #343a40;
-  width: 1000px;
+const Wrapper = styled.div`
+  /* border: 1px solid blue; */
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  max-width: 1225px;
+  padding: 0 17px;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+`
+const CopyRight = styled.span`
+  color: black;
+  font-size: 17px;
+  font-weight: 400;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+`
+const FooterNav = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+const Sns = styled.ul`
+  color: #343a40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
   a {
     display: flex;
     align-items: center;
@@ -27,63 +68,76 @@ const SnsNav = styled.ul`
   span {
     color: grey;
     padding-top: 2px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
-    margin: 0 10px;
+    margin: 0 3px;
+    text-transform: uppercase;
+  }
+  li {
+    margin: 0 5px;
   }
 `
-const Address = styled.div`
-  color: grey;
-  font-size: 16px;
-  letter-spacing: 1px;
-  margin-top: 50px;
+const Contact = styled.ul`
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  height: 70px;
-  /* border: 1px dotted blue; */
+  justify-content: center;
+  a {
+    display: flex;
+    align-items: center;
+  }
+  span {
+    color: black;
+    padding-top: 2px;
+    font-size: 13px;
+    font-weight: 500;
+    /* margin: 0 1px; */
+    text-transform: uppercase;
+  }
+  li {
+    margin-left: 10px;
+  }
 `
 
 export const Footer = () => {
   return (
     <Container>
-      <SnsNav>
-        <li>
-          <a href="/instagram">
-            <BsInstagram />
-            <span>INSTAGRAM</span>
-          </a>
-        </li>
-        <li>
-          <a href="/facebook">
-            <BsFacebook />
-            <span>FACEBOOK</span>
-          </a>
-        </li>
-        <li>
-          <a href="/twitter">
-            <BsTwitter />
-            <span>TWITTER</span>
-          </a>
-        </li>
-        <li>
-          <a href="/youtube">
-            <BsYoutube fontSize="1.2em" />
-            <span>YOUTUBE</span>
-          </a>
-        </li>
-        <li>
-          <a href="/newsletter">
-            <MdMail fontSize="1.2em" />
-            <span>NEWSLETTER</span>
-          </a>
-        </li>
-      </SnsNav>
-      <Address>
-        <address>14 Samcheong-ro, Jongro-gu, Seoul 03062 Korea</address>
-        <p>Studio InhoChoi - All rights reserved 2020</p>
-      </Address>
+      <Wrapper>
+        <CopyRight className="copyRight">©2021 Inho Choi</CopyRight>
+        <FooterNav className="footerNav">
+          <Sns className="sns">
+            <li>
+              <a href="https://www.instagram.com/inhochoi_gmbh" target="_blank">
+                <AiFillInstagram />
+                <span>INSTAGRAM</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/inhochoi0108" target="_blank">
+                <CgFacebook />
+                <span>FACEBOOK</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://opensea.io/Crypto-Resource" target="_blank">
+                <GiSailboat />
+                <span>OPENSEA</span>
+              </a>
+            </li>
+          </Sns>
+          <Contact>
+            <li>
+              <a href="/credits">
+                <span>credits</span>
+              </a>
+            </li>
+            <li>
+              <a href="/contact">
+                <span>contact</span>
+              </a>
+            </li>
+          </Contact>
+        </FooterNav>
+      </Wrapper>
     </Container>
   )
 }
