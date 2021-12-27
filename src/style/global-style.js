@@ -36,9 +36,7 @@ export const GlobalStyle = createGlobalStyle`
   	display: block;
   }
   body {
-    font-family: 'Exo', 'Roboto';
-  	/* line-height: 1; */
-    /* font-weight: 400; */
+    font-family: ${({ theme }) => theme.fonts.header}, sans-serif;
   }
   ol, ul {
   	list-style: none;
