@@ -2,17 +2,17 @@ backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 
-media_folder: static/images
-public_folder: /images
-
+#media_folder: static/images
+#public_folder: /images
+media_folder: src/images
+public_folder: /images/categories
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/markdown-pages"
-    create: true
-    slug: "index"
-    media_folder: ""
-    public_folder: ""
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog" # Used in the UI as section category's name
+    folder: "src/markdown-pages" # where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{category}}_{{title}}"
+    # slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     path: "{{title}}/index"
     editor:
       preview: false
@@ -20,4 +20,14 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Artist", name: "artist", widget: "string" }
       - { label: "Year", name: "year", widget: "number" }
+      - { label: "Size", name: "size", widget: "string" }
+      - { label: "Materials", name: "materials", widget: "string" }
+      - { label: "etc", name: "etc", widget: "string" }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Image Path", name: "category_image_path", widget: "image" }
+      - {
+          label: "Image Path(crop)",
+          name: "category_image_path_crop",
+          widget: "image",
+        }
       - { label: "Body", name: "body", widget: "markdown" }
