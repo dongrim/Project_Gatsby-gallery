@@ -5,15 +5,15 @@ backend:
 #media_folder: static/images
 #public_folder: /images
 media_folder: src/images
-public_folder: /images/categories
+public_folder: /images
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+  - name: "c" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI as section category's name
     folder: "src/markdown-pages" # where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{category}}_{{title}}"
+    slug: "{{category}}123test"
     # slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    path: "{{title}}/index"
+    path: "{{category}}_{{title}}123test"
     editor:
       preview: false
     fields:
