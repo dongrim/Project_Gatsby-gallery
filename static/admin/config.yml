@@ -14,7 +14,7 @@ collections:
     # slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     path: "categories/{{category}}_{{title}}"
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Artist", name: "artist", widget: "string" }
@@ -49,12 +49,12 @@ collections:
       - { label: "Body", name: "body", widget: "markdown", required: false }
   - name: "art"
     label: "Art"
-    folder: "src/markdown-pages/categories" # where the documents are stored
+    folder: "src/markdown-pages" # where the documents are stored
     create: true
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     path: "categories/c1/{{group}}/{{title}}"
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Artist", name: "artist", widget: "string" }
@@ -72,6 +72,7 @@ collections:
           name: "image_url",
           widget: "image",
           media_folder: ../../../../../static/images,
+          # media_folder: "../../../../../{{media_folder}}",
         }
       - { label: "Group", name: "group", widget: "string" }
       - { label: "Group_order", name: "group_order", widget: "number" }
