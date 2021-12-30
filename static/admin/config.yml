@@ -33,13 +33,13 @@ collections:
           label: "Image Path",
           name: "category_image_path",
           widget: "image",
-          media_folder: ../../images/categories/crop,
+          media_folder: ../../../src/images/categories,
         }
       - {
           label: "Image Path(crop)",
           name: "category_image_path_crop",
           widget: "image",
           # choose_url: false,
-          media_folder: /src/images/categories/crop,
+          media_folder: ../../../src/images/categories/crop,
         }
       - { label: "Body", name: "body", widget: "markdown" }
