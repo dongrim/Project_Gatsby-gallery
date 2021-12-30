@@ -1,19 +1,18 @@
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
-
 #media_folder: static/images
 #public_folder: /images
-media_folder: src/images
-public_folder: /images
+media_folder: src/images/categories/crop
+public_folder: /crop
 collections:
-  - name: "c" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog" # Used in the UI as section category's name
+  - name: "category" # Used in routes, e.g., /admin/collections/blog
+    label: "Category" # Used in the UI as section category's name
     folder: "src/markdown-pages" # where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{category}}123test"
     # slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    path: "{{category}}_{{title}}123test"
+    path: "{{title}}/index"
     editor:
       preview: false
     fields:
