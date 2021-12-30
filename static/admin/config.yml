@@ -20,7 +20,12 @@ collections:
       - { label: "Artist", name: "artist", widget: "string" }
       - { label: "Year", name: "year", widget: "number", required: false }
       - { label: "Size", name: "size", widget: "string", required: false }
-      - { label: "Materials", name: "materials", widget: "string", , required: false }
+      - {
+          label: "Materials",
+          name: "materials",
+          widget: "string",
+          required: false,
+        }
       - {
           label: "etc",
           name: "etc",
@@ -33,7 +38,7 @@ collections:
           name: "category_image_path",
           widget: "image",
           media_folder: ../../../src/images/categories,
-          required: false
+          required: false,
         }
       - {
           label: "Image Path(crop)",
