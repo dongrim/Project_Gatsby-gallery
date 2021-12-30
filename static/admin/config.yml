@@ -1,18 +1,17 @@
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
-#media_folder: static/images
-#public_folder: /images
-media_folder: src/images/categories/crop
-public_folder: /crop
+# media_folder: src/images/categories/crop
+# public_folder: /crop
+media_folder: static/images
+public_folder: /images
 collections:
   - name: "category" # Used in routes, e.g., /admin/collections/blog
     label: "Category" # Used in the UI as section category's name
     folder: "src/markdown-pages" # where the documents are stored
-    create: true # Allow users to create new documents in this collection
+    create: false # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     # slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    # path: "{{title}}/index"
     path: "categories/{{category}}_{{title}}"
     editor:
       preview: false
@@ -21,7 +20,7 @@ collections:
       - { label: "Artist", name: "artist", widget: "string" }
       - { label: "Year", name: "year", widget: "number", required: false }
       - { label: "Size", name: "size", widget: "string", required: false }
-      - { label: "Materials", name: "materials", widget: "string" }
+      - { label: "Materials", name: "materials", widget: "string", , required: false }
       - {
           label: "etc",
           name: "etc",
@@ -34,12 +33,41 @@ collections:
           name: "category_image_path",
           widget: "image",
           media_folder: ../../../src/images/categories,
+          required: false
         }
       - {
           label: "Image Path(crop)",
           name: "category_image_path_crop",
           widget: "image",
-          # choose_url: false,
           media_folder: ../../../src/images/categories/crop,
         }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+  - name: "art"
+    label: "Art"
+    folder: "src/markdown-pages/categories" # where the documents are stored
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    path: "categories/c1/{{group}}/{{title}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Artist", name: "artist", widget: "string" }
+      - { label: "Year", name: "year", widget: "number", required: false }
+      - { label: "Size", name: "size", widget: "string", required: false }
+      - {
+          label: "Materials",
+          name: "materials",
+          widget: "string",
+          required: false,
+        }
+      - { label: "etc", name: "etc", widget: "string", default: "/{{group}}" }
+      - {
+          label: "Image Path",
+          name: "image_url",
+          widget: "image",
+          media_folder: ../../../../../static/images,
+        }
+      - { label: "Group", name: "group", widget: "string" }
+      - { label: "Group_order", name: "group_order", widget: "number" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
