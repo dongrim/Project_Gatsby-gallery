@@ -72,7 +72,12 @@ collections:
           widget: "image",
           media_folder: ../../../../../static/images,
         }
-      - { label: "Group", name: "group", widget: "string", default: "canvas; beauty plops in art; gewerbefläche zu vermieten; hfbk oktogon;" }
+      - {
+          label: "Group",
+          name: "group",
+          widget: "string",
+          default: "canvas; beauty plops in art; gewerbefläche zu vermieten; hfbk oktogon;",
+        }
       - {
           label: "Group_order",
           name: "group_order",
@@ -275,8 +280,15 @@ collections:
           minimize_collapsed: true,
           widget: "list",
           fields:
-            - {label: Quote, name: quote, widget: string, default: "Everything is awesome!"}
-            - {label: Author, name: author, widget: string }
+            [
+              {
+                label: Quote,
+                name: quote,
+                widget: string,
+                default: "Everything is awesome!",
+              },
+              { label: Author, name: author, widget: string },
+            ],
         }
       - {
           label: "Group_order",
