@@ -11,13 +11,13 @@ collections:
     folder: "src/markdown-pages" # where the documents are stored
     create: false # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
-    # slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    # Filename template, e.g., YYYY-MM-DD-title.md
     path: "categories/{{category}}_{{title}}"
     editor:
-      preview: true
+      preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Artist", name: "artist", widget: "string" }
+      - { label: "Artist", name: "artist", widget: "hidden" }
       - { label: "Year", name: "year", widget: "number", required: false }
       - { label: "Size", name: "size", widget: "string", required: false }
       - {
@@ -29,7 +29,7 @@ collections:
       - {
           label: "etc",
           name: "etc",
-          widget: "string",
+          widget: "hidden",
           default: "category image",
         }
       - { label: "Category", name: "category", widget: "string" }
@@ -47,14 +47,14 @@ collections:
           media_folder: ../../../src/images/categories/crop,
         }
       - { label: "Body", name: "body", widget: "markdown", required: false }
-  - name: "art"
-    label: "Art"
-    folder: "src/markdown-pages" # where the documents are stored
+  - name: "canvas"
+    label: "C1"
+    folder: "src/markdown-pages"
     create: true
     slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     path: "categories/c1/{{group}}/{{title}}"
     editor:
-      preview: true
+      preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Artist", name: "artist", widget: "string" }
@@ -72,7 +72,151 @@ collections:
           name: "image_url",
           widget: "image",
           media_folder: ../../../../../static/images,
-          # media_folder: "../../../../../{{media_folder}}",
+        }
+      - { label: "Group", name: "group", widget: "string" }
+      - { label: "Group_order", name: "group_order", widget: "number" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+  - name: "clearance-sale"
+    label: "C2"
+    folder: "src/markdown-pages"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    path: "categories/c2/{{group}}/{{title}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Artist", name: "artist", widget: "string" }
+      - { label: "Year", name: "year", widget: "number", required: false }
+      - { label: "Size", name: "size", widget: "string", required: false }
+      - {
+          label: "Materials",
+          name: "materials",
+          widget: "string",
+          required: false,
+        }
+      - { label: "etc", name: "etc", widget: "string", default: "/{{group}}" }
+      - {
+          label: "Image Path",
+          name: "image_url",
+          widget: "image",
+          media_folder: ../../../../../static/images,
+        }
+      - { label: "Group", name: "group", widget: "string" }
+      - { label: "Group_order", name: "group_order", widget: "number" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+  - name: "price-etiquette"
+    label: "C3"
+    folder: "src/markdown-pages"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    path: "categories/c3/{{group}}/{{title}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Artist", name: "artist", widget: "string" }
+      - { label: "Year", name: "year", widget: "number", required: false }
+      - { label: "Size", name: "size", widget: "string", required: false }
+      - {
+          label: "Materials",
+          name: "materials",
+          widget: "string",
+          required: false,
+        }
+      - { label: "etc", name: "etc", widget: "string", default: "/{{group}}" }
+      - {
+          label: "Image Path",
+          name: "image_url",
+          widget: "image",
+          media_folder: ../../../../../static/images,
+        }
+      - { label: "Group", name: "group", widget: "string" }
+      - { label: "Group_order", name: "group_order", widget: "number" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+  - name: "stone"
+    label: "C4"
+    folder: "src/markdown-pages"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    path: "categories/c4/{{group}}/{{title}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Artist", name: "artist", widget: "string" }
+      - { label: "Year", name: "year", widget: "number", required: false }
+      - { label: "Size", name: "size", widget: "string", required: false }
+      - {
+          label: "Materials",
+          name: "materials",
+          widget: "string",
+          required: false,
+        }
+      - { label: "etc", name: "etc", widget: "string", default: "/{{group}}" }
+      - {
+          label: "Image Path",
+          name: "image_url",
+          widget: "image",
+          media_folder: ../../../../../static/images,
+        }
+      - { label: "Group", name: "group", widget: "string" }
+      - { label: "Group_order", name: "group_order", widget: "number" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+  - name: "still-life"
+    label: "C5"
+    folder: "src/markdown-pages"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    path: "categories/c5/{{group}}/{{title}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Artist", name: "artist", widget: "string" }
+      - { label: "Year", name: "year", widget: "number", required: false }
+      - { label: "Size", name: "size", widget: "string", required: false }
+      - {
+          label: "Materials",
+          name: "materials",
+          widget: "string",
+          required: false,
+        }
+      - { label: "etc", name: "etc", widget: "string", default: "/{{group}}" }
+      - {
+          label: "Image Path",
+          name: "image_url",
+          widget: "image",
+          media_folder: ../../../../../static/images,
+        }
+      - { label: "Group", name: "group", widget: "string" }
+      - { label: "Group_order", name: "group_order", widget: "number" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+  - name: "crypto-resource"
+    label: "C6"
+    folder: "src/markdown-pages"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    path: "categories/c6/{{group}}/{{title}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Artist", name: "artist", widget: "string" }
+      - { label: "Year", name: "year", widget: "number", required: false }
+      - { label: "Size", name: "size", widget: "string", required: false }
+      - {
+          label: "Materials",
+          name: "materials",
+          widget: "string",
+          required: false,
+        }
+      - { label: "etc", name: "etc", widget: "string", default: "/{{group}}" }
+      - {
+          label: "Image Path",
+          name: "image_url",
+          widget: "image",
+          media_folder: ../../../../../static/images,
         }
       - { label: "Group", name: "group", widget: "string" }
       - { label: "Group_order", name: "group_order", widget: "number" }
