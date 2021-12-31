@@ -2,7 +2,7 @@
 title: Schaufenster Puppe
 artist: Inho Choi
 year: 2018
-size: 
+size:
 materials:
 etc: /still-life
 image_url: ../../../../../static/images/schaufenster_puppe.png

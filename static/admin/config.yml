@@ -1,8 +1,6 @@
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
-# media_folder: src/images/categories/crop
-# public_folder: /crop
 media_folder: static/images
 public_folder: /images
 collections:
@@ -47,6 +45,8 @@ collections:
     folder: "src/markdown-pages/categories/c1"
     path: "{{group}}/{{title}}"
     create: true
+    media_folder: "../../../../../{{media_folder}}"
+    public_folder: "/images"
     editor:
       preview: false
     fields:
@@ -73,7 +73,7 @@ collections:
           media_folder: ../../../../../static/images,
         }
       - {
-          label: "Group",
+          label: "Group(You must choose one of the below)",
           name: "group",
           widget: "string",
           default: "canvas; beauty plops in art; gewerbefläche zu vermieten; hfbk oktogon;",
@@ -196,7 +196,12 @@ collections:
           widget: "image",
           media_folder: ../../../../../static/images,
         }
-      - { label: "Group", name: "group", widget: "string", default: "stone" }
+      - {
+          label: "Group(You must choose one of the below)",
+          name: "group",
+          widget: "string",
+          default: "stone; 369artspace; installation in milano; price etiquette stone;",
+        }
       - {
           label: "Group_order",
           name: "group_order",
@@ -230,10 +235,10 @@ collections:
           media_folder: ../../../../../static/images,
         }
       - {
-          label: "Group",
+          label: "Group(You must choose one of the below)",
           name: "group",
           widget: "string",
-          default: "still life",
+          default: "still life; schaufenster puppe; SEHIKYO holes and buttons 2020;",
         }
       - {
           label: "Group_order",
