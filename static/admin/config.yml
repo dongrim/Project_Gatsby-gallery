@@ -72,7 +72,7 @@ collections:
           widget: "image",
           media_folder: ../../../../../static/images,
         }
-      - { label: "Group", name: "group", widget: "string", default: "canvas" }
+      - { label: "Group", name: "group", widget: "string", default: "canvas; beauty plops in art; gewerbefläche zu vermieten; hfbk oktogon;" }
       - {
           label: "Group_order",
           name: "group_order",
@@ -82,9 +82,9 @@ collections:
       - { label: "Body", name: "body", widget: "markdown", required: false }
   - name: "clearance-sale"
     label: "C2-Clearance Sale"
-    folder: "src/markdown-pages"
+    folder: "src/markdown-pages/categories/c2"
+    path: "{{group}}/{{title}}"
     create: true
-    path: "categories/c2/{{group}}/{{title}}"
     editor:
       preview: false
     fields:
@@ -98,7 +98,12 @@ collections:
           widget: "string",
           required: false,
         }
-      - { label: "etc", name: "etc", widget: "string", default: "/{{name}}" }
+      - {
+          label: "etc",
+          name: "etc",
+          widget: "string",
+          default: "/clearance-sale",
+        }
       - {
           label: "Image Path",
           name: "image_url",
@@ -111,13 +116,18 @@ collections:
           widget: "string",
           default: "clearance sale",
         }
-      - { label: "Group_order", name: "group_order", widget: "number" }
+      - {
+          label: "Group_order",
+          name: "group_order",
+          widget: "number",
+          required: false,
+        }
       - { label: "Body", name: "body", widget: "markdown", required: false }
   - name: "price-etiquette"
     label: "C3-Price Etiquette"
-    folder: "src/markdown-pages"
+    folder: "src/markdown-pages/categories/c3"
+    path: "{{group}}/{{title}}"
     create: true
-    path: "categories/c3/{{group}}/{{title}}"
     editor:
       preview: false
     fields:
@@ -131,21 +141,36 @@ collections:
           widget: "string",
           required: false,
         }
-      - { label: "etc", name: "etc", widget: "string", default: "/{{group}}" }
+      - {
+          label: "etc",
+          name: "etc",
+          widget: "string",
+          default: "/price-etiquette",
+        }
       - {
           label: "Image Path",
           name: "image_url",
           widget: "image",
           media_folder: ../../../../../static/images,
         }
-      - { label: "Group", name: "group", widget: "string" }
-      - { label: "Group_order", name: "group_order", widget: "number" }
+      - {
+          label: "Group",
+          name: "group",
+          widget: "string",
+          default: "price etiquette",
+        }
+      - {
+          label: "Group_order",
+          name: "group_order",
+          widget: "number",
+          required: false,
+        }
       - { label: "Body", name: "body", widget: "markdown", required: false }
   - name: "stone"
     label: "C4-Stone"
-    folder: "src/markdown-pages"
+    folder: "src/markdown-pages/categories/c4"
+    path: "{{group}}/{{title}}"
     create: true
-    path: "categories/c4/{{group}}/{{title}}"
     editor:
       preview: false
     fields:
@@ -159,21 +184,26 @@ collections:
           widget: "string",
           required: false,
         }
-      - { label: "etc", name: "etc", widget: "string", default: "/{{group}}" }
+      - { label: "etc", name: "etc", widget: "string", default: "/stone" }
       - {
           label: "Image Path",
           name: "image_url",
           widget: "image",
           media_folder: ../../../../../static/images,
         }
-      - { label: "Group", name: "group", widget: "string" }
-      - { label: "Group_order", name: "group_order", widget: "number" }
+      - { label: "Group", name: "group", widget: "string", default: "stone" }
+      - {
+          label: "Group_order",
+          name: "group_order",
+          widget: "number",
+          required: false,
+        }
       - { label: "Body", name: "body", widget: "markdown", required: false }
   - name: "still-life"
     label: "C5-Still Life"
-    folder: "src/markdown-pages"
+    folder: "src/markdown-pages/categories/c5"
+    path: "{{group}}/{{title}}"
     create: true
-    path: "categories/c5/{{group}}/{{title}}"
     editor:
       preview: false
     fields:
@@ -187,21 +217,31 @@ collections:
           widget: "string",
           required: false,
         }
-      - { label: "etc", name: "etc", widget: "string", default: "/{{group}}" }
+      - { label: "etc", name: "etc", widget: "string", default: "/still-life" }
       - {
           label: "Image Path",
           name: "image_url",
           widget: "image",
           media_folder: ../../../../../static/images,
         }
-      - { label: "Group", name: "group", widget: "string" }
-      - { label: "Group_order", name: "group_order", widget: "number" }
+      - {
+          label: "Group",
+          name: "group",
+          widget: "string",
+          default: "still life",
+        }
+      - {
+          label: "Group_order",
+          name: "group_order",
+          widget: "number",
+          required: false,
+        }
       - { label: "Body", name: "body", widget: "markdown", required: false }
   - name: "crypto-resource"
     label: "C6-Crypto Resource"
-    folder: "src/markdown-pages"
+    folder: "src/markdown-pages/categories/c6"
+    path: "{{group}}/{{title}}"
     create: true
-    path: "categories/c6/{{group}}/{{title}}"
     editor:
       preview: false
     fields:
@@ -215,13 +255,33 @@ collections:
           widget: "string",
           required: false,
         }
-      - { label: "etc", name: "etc", widget: "string", default: "/{{group}}" }
+      - {
+          label: "etc",
+          name: "etc",
+          widget: "string",
+          default: "/crypto-resource",
+        }
       - {
           label: "Image Path",
           name: "image_url",
           widget: "image",
           media_folder: ../../../../../static/images,
         }
-      - { label: "Group", name: "group", widget: "string" }
-      - { label: "Group_order", name: "group_order", widget: "number" }
+      - {
+          label: "Group",
+          name: "group",
+          # widget: "string",
+          # default: "crypto resource",
+          minimize_collapsed: true,
+          widget: "list",
+          fields:
+            - {label: Quote, name: quote, widget: string, default: "Everything is awesome!"}
+            - {label: Author, name: author, widget: string }
+        }
+      - {
+          label: "Group_order",
+          name: "group_order",
+          widget: "number",
+          required: false,
+        }
       - { label: "Body", name: "body", widget: "markdown", required: false }
