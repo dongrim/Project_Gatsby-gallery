@@ -9,15 +9,15 @@ collections:
   - name: "category" # Used in routes, e.g., /admin/collections/blog
     label: "Category" # Used in the UI as section category's name
     folder: "src/markdown-pages" # where the documents are stored
-    create: false # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
-    # Filename template, e.g., YYYY-MM-DD-title.md
     path: "categories/{{category}}_{{title}}"
+    create: false # Allow users to create new documents in this collection
+    # slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    # Filename template, e.g., YYYY-MM-DD-title.md
     editor:
       preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Artist", name: "artist", widget: "hidden" }
+      - { label: "Artist", name: "artist", widget: "string" }
       - { label: "Year", name: "year", widget: "number", required: false }
       - { label: "Size", name: "size", widget: "string", required: false }
       - {
@@ -26,12 +26,7 @@ collections:
           widget: "string",
           required: false,
         }
-      - {
-          label: "etc",
-          name: "etc",
-          widget: "hidden",
-          default: "category image",
-        }
+      - { label: "etc", name: "etc", widget: "string" }
       - { label: "Category", name: "category", widget: "string" }
       - {
           label: "Image Path",
@@ -48,16 +43,20 @@ collections:
         }
       - { label: "Body", name: "body", widget: "markdown", required: false }
   - name: "canvas"
-    label: "C1"
-    folder: "src/markdown-pages"
+    label: "C1-Canvas"
+    folder: "src/markdown-pages/categories/c1"
+    path: "{{group}}/{{title}}"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
-    path: "categories/c1/{{group}}/{{title}}"
     editor:
       preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Artist", name: "artist", widget: "string" }
+      - {
+          label: "Artist",
+          name: "artist",
+          widget: "string",
+          default: "Inho Choi",
+        }
       - { label: "Year", name: "year", widget: "number", required: false }
       - { label: "Size", name: "size", widget: "string", required: false }
       - {
@@ -66,21 +65,25 @@ collections:
           widget: "string",
           required: false,
         }
-      - { label: "etc", name: "etc", widget: "string", default: "/{{group}}" }
+      - { label: "etc", name: "etc", widget: "string", default: "/canvas" }
       - {
           label: "Image Path",
           name: "image_url",
           widget: "image",
           media_folder: ../../../../../static/images,
         }
-      - { label: "Group", name: "group", widget: "string" }
-      - { label: "Group_order", name: "group_order", widget: "number" }
+      - { label: "Group", name: "group", widget: "string", default: "canvas" }
+      - {
+          label: "Group_order",
+          name: "group_order",
+          widget: "number",
+          required: false,
+        }
       - { label: "Body", name: "body", widget: "markdown", required: false }
   - name: "clearance-sale"
-    label: "C2"
+    label: "C2-Clearance Sale"
     folder: "src/markdown-pages"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     path: "categories/c2/{{group}}/{{title}}"
     editor:
       preview: false
@@ -95,21 +98,25 @@ collections:
           widget: "string",
           required: false,
         }
-      - { label: "etc", name: "etc", widget: "string", default: "/{{group}}" }
+      - { label: "etc", name: "etc", widget: "string", default: "/{{name}}" }
       - {
           label: "Image Path",
           name: "image_url",
           widget: "image",
           media_folder: ../../../../../static/images,
         }
-      - { label: "Group", name: "group", widget: "string" }
+      - {
+          label: "Group",
+          name: "group",
+          widget: "string",
+          default: "clearance sale",
+        }
       - { label: "Group_order", name: "group_order", widget: "number" }
       - { label: "Body", name: "body", widget: "markdown", required: false }
   - name: "price-etiquette"
-    label: "C3"
+    label: "C3-Price Etiquette"
     folder: "src/markdown-pages"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     path: "categories/c3/{{group}}/{{title}}"
     editor:
       preview: false
@@ -135,10 +142,9 @@ collections:
       - { label: "Group_order", name: "group_order", widget: "number" }
       - { label: "Body", name: "body", widget: "markdown", required: false }
   - name: "stone"
-    label: "C4"
+    label: "C4-Stone"
     folder: "src/markdown-pages"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     path: "categories/c4/{{group}}/{{title}}"
     editor:
       preview: false
@@ -164,10 +170,9 @@ collections:
       - { label: "Group_order", name: "group_order", widget: "number" }
       - { label: "Body", name: "body", widget: "markdown", required: false }
   - name: "still-life"
-    label: "C5"
+    label: "C5-Still Life"
     folder: "src/markdown-pages"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     path: "categories/c5/{{group}}/{{title}}"
     editor:
       preview: false
@@ -193,10 +198,9 @@ collections:
       - { label: "Group_order", name: "group_order", widget: "number" }
       - { label: "Body", name: "body", widget: "markdown", required: false }
   - name: "crypto-resource"
-    label: "C6"
+    label: "C6-Crypto Resource"
     folder: "src/markdown-pages"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     path: "categories/c6/{{group}}/{{title}}"
     editor:
       preview: false
