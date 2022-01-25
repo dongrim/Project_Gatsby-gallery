@@ -1,22 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 import { Layout } from "../components/index"
+import S from "../styles/page.style"
 
 const Container = styled.div`
-  border: 1px dotted grey;
-  /* max-width: 1225px; */
-  max-width: 520px;
-  padding: 0 40px;
-  height: 100%;
+  padding: ${S.padding};
+  max-width: ${S.maxWidth};
   margin: auto;
-  /* text-align: center; */
-`
-const Title = styled.h1`
-  font-size: 1em;
-  font-weight: 600;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 10px 0;
 `
 const Text = styled.p`
   margin: 10px 0;
@@ -26,7 +16,8 @@ function CreditsPage() {
   return (
     <Layout>
       <Container>
-        <Title>photograph credits</Title>
+        <S.Title>photograph credits</S.Title>
+        <S.Hr />
         <Text>
           The photographer or owner of the images can be found by hovering over
           the image. The majority of the photographs appearing on this site are
@@ -42,7 +33,7 @@ function CreditsPage() {
         </Text>
         <Text>
           If you see a photo incorrectly credited, please contact us at
-          info@jamesturrell.com.
+          info@inhochoistudio.com.
         </Text>
       </Container>
     </Layout>

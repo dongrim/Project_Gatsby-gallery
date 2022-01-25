@@ -1,84 +1,81 @@
 import React from "react"
 import styled from "styled-components"
 import { Layout } from "../components/index"
+import S from "../styles/page.style"
 
 const Container = styled.div`
-  user-select: none;
-  margin: 50px auto;
-  width: 800px;
-  line-height: 1.4;
-  div {
-    margin-bottom: 25px;
-  }
-  h2 {
-    margin: 15px 0 7px;
-    font-size: 1.125em;
-    border-bottom: 1px solid gray;
-    display: inline-block;
-  }
+  padding: ${S.padding};
+  font-size: 16px;
   .address {
     user-select: auto;
-    a {
+    a:hover {
       text-decoration: underline;
     }
   }
 `
-const Title = styled.h1`
-  font-size: 1.5em;
-  font-weight: 400;
-  margin-bottom: 30px;
+const Section = styled.div`
+  margin-bottom: 50px;
+  p {
+    line-height: 1.7;
+  }
+`
+const Article = styled.div`
+  max-width: ${S.maxWidth};
+  margin: auto;
 `
 
 function ArtistPage() {
   return (
-    <>
-      <Layout>
-        <Container>
-          <Title>Biography</Title>
-          <div>
-            <h2>Education</h2>
-            <p>2011 Sung kyun kwan University, Seoul – Fine Art/Bachelor</p>
+    <Layout>
+      <Container>
+        <Article>
+          <Section>
+            <S.Title>education</S.Title>
+            <S.Hr />
+            <p>Sung kyun kwan University, Fine Art/Bachelor, Seoul, 2011</p>
             <p>
-              2013-2014 Staatliche Akademie der Bildenden Künste Stuttgart
-              -Painting/ Cordula Güdemann
+              Staatliche Akademie der Bildenden Künste Stuttgart, Painting/
+              Cordula Güdemann, 2013-2014
             </p>
             <p>
-              2014-2019 Hochschule für Bildende Künste | HfBK Dresden -
-              Sculpture & Spatial Concepts/ Eberhard Bosslet/Diplom
+              Hochschule für Bildende Künste | HfBK Dresden, Sculpture & Spatial
+              Concepts/ Eberhard Bosslet/Diplom, 2014-2019
             </p>
             <p>
-              2019-2021 Hochschule für Bildende Künste | HfBK Dresden -
-              Sculpture & Spatial Concepts/ Susan Philipsz/Meisterschüler
-              studium
+              Hochschule für Bildende Künste | HfBK Dresden, Sculpture & Spatial
+              Concepts/ Susan Philipsz/Meisterschüler studium, 2019-2021
             </p>
-          </div>
-          <div>
-            <h2>Group Exhibition</h2>
-            <p>2019, Beauty Plops in Art, JSM Plops, Seoul</p>
+          </Section>
+          <Section>
+            <S.Title>group exhibition</S.Title>
+            <S.Hr />
+            <p>Beauty Plops in Art, JSM Plops, Seoul, 2019</p>
             <p>
-              2018, Gewerbefläche zu vermieten, Hole of Fame, Dresden, Germany
-            </p>
-            <p>
-              2018, Dresden art_excursion_seoul, 369 Art Space, 2 Exhibition
-              center, seoul
+              Gewerbefläche zu vermieten, Hole of Fame, Dresden, Germany, 2018
             </p>
             <p>
-              2017, Schatzkästchen, Hfbk Dresden, sponsored by the
-              “Freundeskreis der Hochschule für Bildende Künste Dresden“,
-              Gewandhausstraße 7, Dresden, Germany
+              Dresden art_excursion_seoul, 369 Art Space, 2 Exhibition center,
+              Seoul, 2018
             </p>
             <p>
-              2017, Kunstzug, Wrocław(Poland)- Dresden Section Train Art
-              Project, Poland, Germany
+              Schatzkästchen, Hfbk Dresden, sponsored by the "Freundeskreis der
+              Hochschule für Bildende Künste Dresden", Gewandhausstraße 7,
+              Dresden, Germany, 2017
             </p>
-            <p>2016, Wolrd and Painting , Earth Gallery, Dresden, Germany</p>
-          </div>
-          <div>
-            <h2>Solo Exhibition</h2>
-            <p>2016, Räumungsverkauf, Ex14 Dresden, Germany</p>
-          </div>
-          <div className="address">
-            <h2>Contact</h2>
+            <p>
+              Kunstzug, Wrocław(Poland)- Dresden Section Train Art Project,
+              Poland, Germany, 2017
+            </p>
+            <p>Wolrd and Painting , Earth Gallery, Dresden, Germany, 2016</p>
+          </Section>
+          <Section>
+            <S.Title>solo exhibition</S.Title>
+            <S.Hr />
+            <p>Räumungsverkauf, Ex14 Dresden, Germany, 2016</p>
+          </Section>
+          <Section className="address">
+            <S.Title>contact</S.Title>
+            <S.Hr />
             <ul>
               <li>silverstarno@gmail.com</li>
               <li>
@@ -95,10 +92,10 @@ function ArtistPage() {
                 </a>
               </li>
             </ul>
-          </div>
-        </Container>
-      </Layout>
-    </>
+          </Section>
+        </Article>
+      </Container>
+    </Layout>
   )
 }
 

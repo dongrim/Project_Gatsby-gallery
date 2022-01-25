@@ -1,10 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
-  /* body {
-    color: ${props => (props.theme === "purple" ? "purple" : "white")};
-  } */
-
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -52,5 +48,15 @@ export const GlobalStyle = createGlobalStyle`
   table {
   	border-collapse: collapse;
   	border-spacing: 0;
+  }
+  Hr {
+    content: "";
+  display: block;
+  /* width: 132px; */
+  width: 100px;
+  height: 3px;
+  border-radius: 1px;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: 15px auto 30px;
   }
 `

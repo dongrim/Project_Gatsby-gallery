@@ -9,8 +9,7 @@ collections:
     folder: "src/markdown-pages" # where the documents are stored
     path: "categories/{{category}}_{{title}}"
     create: false # Allow users to create new documents in this collection
-    # slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
-    # Filename template, e.g., YYYY-MM-DD-title.md
+    # slug: "{{year}}-{{month}}-{{day}}_{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     editor:
       preview: false
     fields:
@@ -45,8 +44,6 @@ collections:
     folder: "src/markdown-pages/categories/c1"
     path: "{{group}}/{{title}}"
     create: true
-    media_folder: "../../../../../{{media_folder}}"
-    public_folder: "/images"
     editor:
       preview: false
     fields:
@@ -71,6 +68,7 @@ collections:
           name: "image_url",
           widget: "image",
           media_folder: ../../../../../static/images,
+          choose_url: false,
         }
       - {
           label: "Group(You must choose one of the below)",
@@ -114,6 +112,7 @@ collections:
           name: "image_url",
           widget: "image",
           media_folder: ../../../../../static/images,
+          choose_url: false,
         }
       - {
           label: "Group",
@@ -157,6 +156,7 @@ collections:
           name: "image_url",
           widget: "image",
           media_folder: ../../../../../static/images,
+          choose_url: false,
         }
       - {
           label: "Group",
@@ -195,6 +195,7 @@ collections:
           name: "image_url",
           widget: "image",
           media_folder: ../../../../../static/images,
+          choose_url: false,
         }
       - {
           label: "Group(You must choose one of the below)",
@@ -233,6 +234,7 @@ collections:
           name: "image_url",
           widget: "image",
           media_folder: ../../../../../static/images,
+          choose_url: false,
         }
       - {
           label: "Group(You must choose one of the below)",
@@ -276,24 +278,13 @@ collections:
           name: "image_url",
           widget: "image",
           media_folder: ../../../../../static/images,
+          choose_url: false,
         }
       - {
           label: "Group",
           name: "group",
-          # widget: "string",
-          # default: "crypto resource",
-          minimize_collapsed: true,
-          widget: "list",
-          fields:
-            [
-              {
-                label: Quote,
-                name: quote,
-                widget: string,
-                default: "Everything is awesome!",
-              },
-              { label: Author, name: author, widget: string },
-            ],
+          widget: "string",
+          default: "crypto resource",
         }
       - {
           label: "Group_order",

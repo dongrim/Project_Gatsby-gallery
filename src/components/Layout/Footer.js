@@ -5,7 +5,6 @@ import { CgFacebook } from "react-icons/cg"
 import { GiSailboat } from "react-icons/gi"
 
 const Container = styled.div`
-  /* border-top: 1px solid #d6d6d6; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +32,6 @@ const Container = styled.div`
   }
 `
 const Wrapper = styled.div`
-  /* border: 1px solid blue; */
   width: 100%;
   height: 100%;
   margin: auto;
@@ -102,7 +100,7 @@ export const Footer = () => {
   return (
     <Container>
       <Wrapper>
-        <CopyRight className="copyRight">©2021 Inho Choi</CopyRight>
+        <CopyRight className="copyRight">©2022 Inho Choi</CopyRight>
         <FooterNav className="footerNav">
           <Sns className="sns">
             <li>

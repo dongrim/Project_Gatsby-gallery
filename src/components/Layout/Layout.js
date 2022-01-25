@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Header } from "./Header"
 import { Footer } from "./Footer"
-import { GlobalStyle } from "../../style/global-style"
+import { GlobalStyle } from "../../styles/global-style"
 import { Helmet } from "react-helmet"
 import { Menu } from "../index"
 import MyContext from "../UserContext/UserContext"

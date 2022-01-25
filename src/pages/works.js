@@ -3,35 +3,19 @@ import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import { Layout } from "../components/index"
+import S from "../styles/page.style"
 
 const Container = styled.div`
+  padding: ${S.padding};
   margin: auto;
   max-width: 1225px;
-  padding: 0 17px;
-`
-const Title = styled.h1`
-  /* border: 1px solid blue; */
-  margin-top: 50px;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: rgba(0, 0, 0, 0.8); ;
 `
 const Subtitle = styled.h1`
   text-align: center;
-  color: #666666;
-  font-size: 1.1rem;
-  margin: 20px 0 22px;
-`
-const Hr = styled.div`
-  content: "";
-  display: block;
-  width: 132px;
-  height: 0.125em;
-  border-radius: 3px;
-  background-color: rgba(0, 0, 0, 0.3);
-  margin: 30px auto 30px;
+  color: #676767;
+  font-size: 0.925em;
+  font-weight: 600;
+  margin: 25px 0;
 `
 const WrapperImage = styled.div`
   /* border: 1px solid orange; */
@@ -45,8 +29,8 @@ function WorksPage({ data }) {
   return (
     <Layout>
       <Container>
-        <Title>work (year)</Title>
-        <Hr></Hr>
+        <S.Title>work (year)</S.Title>
+        <S.Hr />
         {years.map(year => {
           {
             return (
