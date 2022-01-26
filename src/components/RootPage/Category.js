@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery, Link as GatsbyLink } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-// import path from "path"
 
 const Container = styled.div`
   width: 100%;

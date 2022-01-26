@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Layout, ImageGroup, Pagenation, EnlargeImg } from "../components/index"
+import { Layout, ImageGroup, Pagination, EnlargeImg } from "../components/index"
 
 const Container = styled.div`
   width: 100%;
@@ -106,7 +106,7 @@ export default function Template({ data }) {
               setselectedImage={setselectedImage}
             />
           </WrapperImageGroup>
-          <Pagenation
+          <Pagination
             pageSet={pageSet}
             setCurrentPage={setCurrentPage}
             autoScroll={heightRef}
