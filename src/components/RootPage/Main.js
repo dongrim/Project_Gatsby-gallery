@@ -48,9 +48,8 @@ export const Main = () => {
             <div
               className="wrapperImage"
               style={{
-                // border: "2px solid orange",
                 display: "grid",
-                height: "calc(100vh - 120px)", // 120px + @?: fixed header's total width
+                height: "calc(100vh - 120px)",
               }}
             >
               <StaticImage
@@ -67,7 +66,6 @@ export const Main = () => {
               />
               <div
                 style={{
-                  // border: "1px solid purple",
                   paddingLeft: "8px",
                   gridArea: "2 / 1",
                   position: "relative",

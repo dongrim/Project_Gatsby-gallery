@@ -1,8 +1,8 @@
 import React, { useContext } from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
+import { navigate } from "gatsby"
 import modalContext from "../UserContext/UserContext"
-import { MdOutlineCancel } from "react-icons/md"
+import { GrClose } from "react-icons/gr"
 
 const Container = styled.div``
 const Header = styled.div`
@@ -36,14 +36,16 @@ const MenuList = styled.div`
     font-size: 2em;
     font-weight: 500;
   }
-  div {
-    margin: 15px;
-    font-size: 1.3em;
-    color: #495057;
-  }
 `
-const LinkNav = styled(Link)`
+const Footer = styled.div`
+  margin: 15px;
+  font-size: 1.3em;
+  color: #495057;
+`
+const LinkBtn = styled.div`
   margin: 18px 0;
+  color: black;
+  cursor: pointer;
 `
 
 export const Menu = () => {
@@ -53,14 +55,41 @@ export const Menu = () => {
     <Container>
       <Header>
         <h1>menu</h1>
-        <MdOutlineCancel
+        <GrClose
           size={22}
           className="exitBtn"
           onClick={() => setModal(false)}
         />
       </Header>
       <MenuList>
-        <LinkNav to="/artist">
+        <LinkBtn
+          onClick={() => {
+            navigate("/artist")
+            setModal(false)
+          }}
+        >
+          <span>artist</span>
+        </LinkBtn>
+        <LinkBtn
+          onClick={() => {
+            navigate("/works")
+            setModal(false)
+          }}
+        >
+          <span>works</span>
+        </LinkBtn>
+        <LinkBtn
+          onClick={() => {
+            navigate("/about")
+            setModal(false)
+          }}
+        >
+          <span>about</span>
+        </LinkBtn>
+        <LinkBtn onClick={() => navigate("#")}>
+          <span>search</span>
+        </LinkBtn>
+        {/* <LinkNav to="/artist">
           <span>artist</span>
         </LinkNav>
         <LinkNav to="/works">
@@ -71,8 +100,8 @@ export const Menu = () => {
         </LinkNav>
         <LinkNav to="#">
           <span>search</span>
-        </LinkNav>
-        <div>Gallery InHo Choi</div>
+        </LinkNav> */}
+        <Footer>Gallery InHo Choi</Footer>
       </MenuList>
     </Container>
   )

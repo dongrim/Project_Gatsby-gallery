@@ -27,7 +27,6 @@ const WrapperButton = styled.div`
   }
   .pageNum {
     margin: 0 5px;
-    padding-top: 2px;
     color: rgba(0, 0, 0, 0.8);
   }
 `

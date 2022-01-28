@@ -49,14 +49,4 @@ export const GlobalStyle = createGlobalStyle`
   	border-collapse: collapse;
   	border-spacing: 0;
   }
-  Hr {
-    content: "";
-  display: block;
-  /* width: 132px; */
-  width: 100px;
-  height: 3px;
-  border-radius: 1px;
-  background-color: rgba(0, 0, 0, 0.3);
-  margin: 15px auto 30px;
-  }
 `

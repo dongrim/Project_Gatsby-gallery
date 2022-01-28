@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GrClose } from "react-icons/gr"
 
-const Container = styled.div``
-const WrapperImage = styled.div`
+const Container = styled.div`
   background: rgba(255, 255, 255, 0.92);
   position: fixed;
   width: 100%;
@@ -11,22 +11,28 @@ const WrapperImage = styled.div`
   z-index: 9999;
   top: 0;
   left: 0;
-  /* right: 0;
-  bottom: 0; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `
+const WrapperImage = styled.div`
+  /* max-width: 95%;
+  max-height: 95%; */
+`
 const Header = styled.div`
-  border: 1px solid orange;
   width: 100%;
+  min-height: 55px;
+  position: relative;
   .exitBtn {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
     cursor: pointer;
   }
 `
 const Footer = styled.div`
-  width: 100%;
+  width: inherit;
   padding: 6px 8px;
   font-weight: 600;
   line-height: 1.4;
@@ -36,15 +42,19 @@ const Footer = styled.div`
 export const EnlargeImg = ({ selectedImage, setModalOpen }) => {
   return (
     <Container>
-      <WrapperImage onClick={() => setModalOpen(false)}>
+      <WrapperImage>
+        <Header>
+          <GrClose
+            size={28}
+            className="exitBtn"
+            onClick={() => setModalOpen(false)}
+          />
+        </Header>
         <GatsbyImage
-          style={{
-            // transform: "scale(0.99)",
-            width: "100vmin",
-            objectFit: "fill",
-          }}
+          style={{}}
           image={getImage(selectedImage.image_url)}
           alt={selectedImage.alt}
+          onClick={() => setModalOpen(false)}
         />
         <Footer>
           <div>

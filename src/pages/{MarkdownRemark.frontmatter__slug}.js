@@ -160,7 +160,7 @@ export const pageQuery = graphql`
                   #height: 300
                   placeholder: BLURRED
                   blurredOptions: { width: 100 }
-                  #layout: CONSTRAINED
+                  #layout: FULL_WIDTH
                   transformOptions: { fit: FILL, cropFocus: CENTER }
                   #aspectRatio: 1.5
                   formats: WEBP
