@@ -17,8 +17,10 @@ const Container = styled.div`
   align-items: center;
 `
 const WrapperImage = styled.div`
-  /* max-width: 95%;
-  max-height: 95%; */
+  width: 90%;
+  @media screen and (min-width: 961px) {
+    width: 30vw;
+  }
 `
 const Header = styled.div`
   width: 100%;
@@ -51,7 +53,9 @@ export const EnlargeImg = ({ selectedImage, setModalOpen }) => {
           />
         </Header>
         <GatsbyImage
-          style={{}}
+          style={{
+            objectFit: "fill",
+          }}
           image={getImage(selectedImage.image_url)}
           alt={selectedImage.alt}
           onClick={() => setModalOpen(false)}

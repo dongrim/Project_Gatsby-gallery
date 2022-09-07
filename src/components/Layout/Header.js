@@ -119,10 +119,10 @@ export const Header = () => {
               <li>
                 <LinkNav to="/works">works</LinkNav>
               </li>
-              <li>
+              <li style={{ pointerEvents: "none" }}>
                 <LinkNav to="/about">about</LinkNav>
               </li>
-              <li>
+              <li style={{ pointerEvents: "none" }}>
                 <Button>search</Button>
               </li>
             </ul>

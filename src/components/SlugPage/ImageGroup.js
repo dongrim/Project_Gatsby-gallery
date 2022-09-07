@@ -3,9 +3,9 @@ import styled from "styled-components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const WrapperItem = styled.div`
-  /* border: 1px solid blue; */
   margin-top: auto;
   cursor: pointer;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   &:hover {
     opacity: 0.4;
     transition-property: opacity;
@@ -23,8 +23,8 @@ const ImageDetail = styled.div`
   padding-left: 3px;
   line-height: 1.3;
   .title {
-    /* font-size: 4vw; */
-    font-size: 3.5vw;
+    padding: 10px;
+    font-size: 3vw;
     font-weight: 400;
   }
   .material,
@@ -32,6 +32,11 @@ const ImageDetail = styled.div`
   .year {
     font-size: 0.85em;
     line-height: 1.5;
+  }
+  @media screen and (min-width: 950px) {
+    .title {
+      font-size: 2rem;
+    }
   }
 `
 

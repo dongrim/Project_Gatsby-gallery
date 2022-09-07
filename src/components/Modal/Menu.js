@@ -79,6 +79,7 @@ export const Menu = () => {
           <span>works</span>
         </LinkBtn>
         <LinkBtn
+          style={{ pointerEvents: "none" }}
           onClick={() => {
             navigate("/about")
             setModal(false)
@@ -86,21 +87,12 @@ export const Menu = () => {
         >
           <span>about</span>
         </LinkBtn>
-        <LinkBtn onClick={() => navigate("#")}>
+        <LinkBtn
+          style={{ pointerEvents: "none" }}
+          onClick={() => navigate("#")}
+        >
           <span>search</span>
         </LinkBtn>
-        {/* <LinkNav to="/artist">
-          <span>artist</span>
-        </LinkNav>
-        <LinkNav to="/works">
-          <span>works</span>
-        </LinkNav>
-        <LinkNav to="/about">
-          <span>about</span>
-        </LinkNav>
-        <LinkNav to="#">
-          <span>search</span>
-        </LinkNav> */}
         <Footer>Gallery InHo Choi</Footer>
       </MenuList>
     </Container>

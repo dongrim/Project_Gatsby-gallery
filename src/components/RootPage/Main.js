@@ -5,6 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 const Container = styled.div`
   width: 100%;
   height: 100%;
+  text-align: center;
 `
 const WrapperArticle = styled.div`
   width: 100%;
@@ -48,15 +49,19 @@ export const Main = () => {
             <div
               className="wrapperImage"
               style={{
-                display: "grid",
+                // display: "grid",
                 height: "calc(100vh - 120px)",
+                maxWidth: "1190px",
+                margin: "0 auto",
               }}
             >
               <StaticImage
-                style={{
-                  gridArea: "1 / 1",
-                }}
-                src="../../images/main/main1.jpg"
+                style={
+                  {
+                    // gridArea: "1 / 1",
+                  }
+                }
+                src="../../images/main/main.jpg"
                 alt="main"
                 placeholder="blurred"
                 layout="fullWidth"
@@ -64,7 +69,7 @@ export const Main = () => {
                 // aspectRatio={4 / 3}
                 // transformOptions={{ grayscale: true, cropFocus: "attention" }}
               />
-              <div
+              {/* <div
                 style={{
                   paddingLeft: "8px",
                   gridArea: "2 / 1",
@@ -79,7 +84,7 @@ export const Main = () => {
                   <p className="exhibition-title">KÖNIG GALERIE, Berlin</p>
                   <p className="exhibition-dates">31.01.2021-05.11.2021</p>
                 </Text>
-              </div>
+              </div> */}
             </div>
           </Li>
         </ul>

@@ -16,7 +16,7 @@ const Ul = styled.ul`
   flex-direction: column;
 `
 const Li = styled.li`
-  margin-bottom: 23px;
+  margin-bottom: 60px;
   display: flex;
   justify-content: center;
 `
@@ -50,12 +50,10 @@ function Category() {
       allMarkdownRemark(
         filter: {
           frontmatter: {
-            category_image_path_crop: {
-              absolutePath: { regex: "/categories/" }
-            }
+            category_image_path: { absolutePath: { regex: "/categories/" } }
           }
         }
-        sort: { fields: frontmatter___category_image_path_crop___absolutePath }
+        sort: { fields: frontmatter___category_image_path___absolutePath }
       ) {
         edges {
           node {
@@ -65,14 +63,14 @@ function Category() {
             frontmatter {
               slug
               title
-              category_image_path_crop {
+              category_image_path {
                 childImageSharp {
                   gatsbyImageData(
-                    #width: 500
-                    height: 450
+                    width: 500
+                    #height: 450
                     placeholder: BLURRED
                     blurredOptions: { width: 100 }
-                    transformOptions: { fit: FILL, cropFocus: CENTER }
+                    transformOptions: { fit: COVER, cropFocus: CENTER }
                     aspectRatio: 1.7
                     formats: WEBP
                   )
@@ -101,9 +99,7 @@ function Category() {
               {/* <Link to={path.basename(edge.node.fileAbsolutePath, ".md")}> */}
               <Link to={edge.node.frontmatter.slug}>
                 <GatsbyImage
-                  image={getImage(
-                    edge.node.frontmatter.category_image_path_crop
-                  )}
+                  image={getImage(edge.node.frontmatter.category_image_path)}
                   alt={edge.node.frontmatter.title}
                 />
               </Link>

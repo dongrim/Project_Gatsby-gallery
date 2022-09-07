@@ -9,7 +9,6 @@ const Container = styled.div`
   height: 100%;
 `
 const WrapperMain = styled.div`
-  /* border: 1px solid blue; */
   margin: 0px auto 70px;
   max-width: 2000px;
 `
@@ -32,7 +31,7 @@ const WrapperSub = styled.div`
   border-top: 1px solid #dfdfdf;
   padding: 1.5rem 1.25rem;
   margin: auto;
-  max-width: 2000px;
+  max-width: 1225px;
   h1 {
     font-size: 1.5em;
     letter-spacing: -1px;
@@ -83,7 +82,7 @@ export default function Template({ data }) {
           <Text>
             <p></p>
             <h1>
-              InHo Choi :{" "}
+              InHo Choi
               {/* <span>
                 {data.markdownRemark.htmlAst.children[0].children[0].value}
               </span> */}
