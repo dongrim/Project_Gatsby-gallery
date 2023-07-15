@@ -1,0 +1,24 @@
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+  cache-control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+  cache-control = "public, max-age=31536001, immutable"
+
+[[headers]]
+  for = "/*.json"
+  [headers.values]
+  cache-control = "public, max-age=31536002, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+  cache-control = "public, max-age=31536003, immutable"
+
+  [[headers]]
+  for = "/*.css"
+  [headers.values]
+  cache-control = "public, max-age=31536004, immutable"
